@@ -705,10 +705,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 9effd0de-450e-4eb5-86eb-db9c0f7db774
+  cloudProjectId: 
   framebufferDepthMemorylessMode: 0
-  projectName: 3d Persone
-  organizationId: vadimsman
+  projectName: 
+  organizationId: 
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
