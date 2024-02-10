@@ -9,7 +9,7 @@ public class CameraRotation : MonoBehaviour
     {
         
     }
-
+    // Public
     public Transform CameraAxisTransform;
     public float RotationSpeed;
     public float MaxAngle;
