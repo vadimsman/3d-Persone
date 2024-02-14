@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 _moveVector;
 
     // Public
+    public Animator animator;
+
     public float Gravity = 9.8f;
 
     public float JumpForce;
@@ -36,11 +38,13 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             Speed = ShiftSpeed;
+            animator.SetBool("isFastRun", true);
         }
 
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             Speed = StandartSpeed;
+            animator.SetBool("isFastRun", false);
         }
 
         if (Input.GetKey(KeyCode.W))
@@ -62,11 +66,20 @@ public class PlayerController : MonoBehaviour
             _moveVector += transform.right;
         }
 
+        if (_moveVector != Vector3.zero)
+        {
+            animator.SetBool("isRun", true);
+        }
+        else
+        {
+            animator.SetBool("isRun", false);
+        }
 
         // Jump
         if (Input.GetKeyDown(KeyCode.Space) && _characterController.isGrounded)
         {
             _fallVelocity = -JumpForce;
+            animator.SetBool("isGrounded", false);
         }
     }
     // Update is called once per frame
@@ -82,6 +95,7 @@ public class PlayerController : MonoBehaviour
         if (_characterController.isGrounded)
         {
             _fallVelocity = 0;
+            animator.SetBool("isGrounded", true);
         }
     }
 }
