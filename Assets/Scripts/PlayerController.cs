@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 _moveVector;
 
+    private bool _isJump;
+
     // Public
     public Animator animator;
 
@@ -76,10 +78,9 @@ public class PlayerController : MonoBehaviour
         }
 
         // Jump
-        if (Input.GetKeyDown(KeyCode.Space) && _characterController.isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && _characterController.isGrounded && _isJump == false)
         {
-            _fallVelocity = -JumpForce;
-            animator.SetBool("isGrounded", false);
+            StartCoroutine(Jump());
         }
     }
     // Update is called once per frame
@@ -97,5 +98,14 @@ public class PlayerController : MonoBehaviour
             _fallVelocity = 0;
             animator.SetBool("isGrounded", true);
         }
+    }
+    public IEnumerator Jump()
+    {
+        _isJump = true;
+        animator.SetBool("isGrounded", false);
+        yield return new WaitForSeconds(0.45f);
+        _fallVelocity = -JumpForce;
+        yield return new WaitForSeconds(0.25f);
+        _isJump = false;
     }
 }
