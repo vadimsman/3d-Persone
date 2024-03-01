@@ -7,6 +7,8 @@ public class PlayerHealth : MonoBehaviour
 {
     public float MaxValue = 100;
     public Slider Healthbar;
+    public GameObject GameplayUI;
+    public GameObject GameOverScreen;
 
     private float _currentValue;
 
@@ -23,7 +25,7 @@ public class PlayerHealth : MonoBehaviour
         _currentValue -= damage;
         if (_currentValue <= 0)
         {
-            Destroy(gameObject);
+            PlayerisDead();
         }
     }
     public void Update()
@@ -34,5 +36,14 @@ public class PlayerHealth : MonoBehaviour
     void UpdateHealthBar()
     {
         Healthbar.value = _currentValue;
+    }
+
+    void PlayerisDead()
+    {
+        GameplayUI.SetActive(false);
+        GameOverScreen.SetActive(true);
+        GetComponent<PlayerController>().enabled = false;
+        GetComponent<FireballCaster>().enabled = false;
+        GetComponent<CameraRotation>().enabled = false;
     }
 }
