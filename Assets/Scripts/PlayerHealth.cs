@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public Slider Healthbar;
     public GameObject GameplayUI;
     public GameObject GameOverScreen;
+    public Animator Animator;
 
     private float _currentValue;
 
@@ -44,6 +45,7 @@ public class PlayerHealth : MonoBehaviour
         GameOverScreen.SetActive(true);
         GetComponent<PlayerController>().enabled = false;
         GetComponent<FireballCaster>().enabled = false;
+        Animator.SetTrigger("isDeath");
         GetComponent<CameraRotation>().enabled = false;
     }
 }
