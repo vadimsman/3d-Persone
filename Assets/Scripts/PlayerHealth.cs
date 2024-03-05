@@ -28,12 +28,18 @@ public class PlayerHealth : MonoBehaviour
         {
             PlayerisDead();
         }
+        UpdateHealthBar();
     }
     public void Update()
     {
         UpdateHealthBar();
     }
 
+    public void AddHealth(float amount)
+    {
+        _currentValue += amount;
+        _currentValue = Mathf.Clamp(_currentValue, 0, MaxValue);
+    }
     void UpdateHealthBar()
     {
         Healthbar.value = _currentValue;
@@ -41,6 +47,7 @@ public class PlayerHealth : MonoBehaviour
 
     void PlayerisDead()
     {
+        Animator.SetTrigger("isDeath");
         GameplayUI.SetActive(false);
         GameOverScreen.SetActive(true);
         GetComponent<PlayerController>().enabled = false;

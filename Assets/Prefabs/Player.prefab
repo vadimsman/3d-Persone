@@ -1147,7 +1147,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1013517963270970313}
-  - component: {fileID: 1013517963270970314}
   m_Layer: 0
   m_Name: Ch39_nonPBR
   m_TagString: Untagged
@@ -1171,25 +1170,6 @@ Transform:
   m_Father: {fileID: 1013517963567377552}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1013517963270970314
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1013517963270970312}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 7c59eb7774cd4bc418592ee3d50bcd95, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1013517963282316869
 GameObject:
   m_ObjectHideFlags: 0
@@ -1512,9 +1492,9 @@ GameObject:
   - component: {fileID: 1013517963567377555}
   - component: {fileID: 8986952471417457231}
   - component: {fileID: 1013517963567377554}
-  - component: {fileID: 1013517962347073016}
   - component: {fileID: 1013517963567377553}
   - component: {fileID: 1013517963567377564}
+  - component: {fileID: 2509106818131780696}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1568,7 +1548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d72bb40eb73194a45a97df1e0065fe78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 1013517962347073016}
+  animator: {fileID: 0}
   Gravity: 9.8
   JumpForce: 5.5
   Speed: 4
@@ -1589,28 +1569,9 @@ CharacterController:
   m_Radius: 0.3
   m_SlopeLimit: 45
   m_StepOffset: 0.3
-  m_SkinWidth: 0.08
+  m_SkinWidth: 0.0001
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1, z: 0}
---- !u!95 &1013517962347073016
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1013517963567377559}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 7c59eb7774cd4bc418592ee3d50bcd95, type: 3}
-  m_Controller: {fileID: 9100000, guid: e81f58b35a9b87545b128f00412906d7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!114 &1013517963567377553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1626,7 +1587,7 @@ MonoBehaviour:
   FireballPrefabs: {fileID: 6330706088760021048, guid: 3748a9375ef619747b67bdcef5e07574,
     type: 3}
   FireballSourceTransform: {fileID: 1013517963808645733}
-  Animator: {fileID: 1013517962347073016}
+  Animator: {fileID: 0}
   Cooldown: 1
 --- !u!114 &1013517963567377564
 MonoBehaviour:
@@ -1644,6 +1605,26 @@ MonoBehaviour:
   Healthbar: {fileID: 3354972895709602876}
   GameplayUI: {fileID: 6408126516292955929}
   GameOverScreen: {fileID: 746530530929581566}
+  Animator: {fileID: 0}
+--- !u!95 &2509106818131780696
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013517963567377559}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1013517963588424668
 GameObject:
   m_ObjectHideFlags: 0

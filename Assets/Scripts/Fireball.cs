@@ -6,7 +6,7 @@ public class Fireball : MonoBehaviour
 {
     public float Speed;
     public float LifeTime;
-    public float Damage = 50;
+    public float Damage = 10;
 
 
     // Start is called before the first frame update

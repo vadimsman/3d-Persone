@@ -720,6 +720,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1306858155}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1011689992 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2509106818131780696, guid: 9751aa2f6d67d1b4fb7f394d6ad5e812,
+    type: 3}
+  m_PrefabInstance: {fileID: 1013517964080832868}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1116310405
 GameObject:
   m_ObjectHideFlags: 0
@@ -1495,7 +1501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bed15e68c8338c144b999b1dbf28484c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Value: 100
+  Value: 200
 --- !u!136 &1586555094
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1696,6 +1702,113 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1648215333}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1798792020
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1798792024}
+  - component: {fileID: 1798792023}
+  - component: {fileID: 1798792022}
+  - component: {fileID: 1798792021}
+  - component: {fileID: 1798792025}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1798792021
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798792020}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1798792022
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798792020}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1798792023
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798792020}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1798792024
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798792020}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.78, y: 0.3, z: 1.684}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1798792025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798792020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51b0fbc832fe0c0448c9550c12cc870f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealAmount: 30
 --- !u!1 &1886113311
 GameObject:
   m_ObjectHideFlags: 0
@@ -2098,12 +2211,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2019969849}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!95 &2066583089 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1013517962347073016, guid: 9751aa2f6d67d1b4fb7f394d6ad5e812,
-    type: 3}
-  m_PrefabInstance: {fileID: 1013517964080832868}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2124823654
 GameObject:
   m_ObjectHideFlags: 0
@@ -2269,6 +2376,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1013517963567377553, guid: 9751aa2f6d67d1b4fb7f394d6ad5e812,
+        type: 3}
+      propertyPath: Animator
+      value: 
+      objectReference: {fileID: 1011689992}
     - target: {fileID: 1013517963567377559, guid: 9751aa2f6d67d1b4fb7f394d6ad5e812,
         type: 3}
       propertyPath: m_Name
@@ -2278,7 +2390,17 @@ PrefabInstance:
         type: 3}
       propertyPath: Animator
       value: 
-      objectReference: {fileID: 2066583089}
+      objectReference: {fileID: 1011689992}
+    - target: {fileID: 2509106818131780696, guid: 9751aa2f6d67d1b4fb7f394d6ad5e812,
+        type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 7c59eb7774cd4bc418592ee3d50bcd95, type: 3}
+    - target: {fileID: 2509106818131780696, guid: 9751aa2f6d67d1b4fb7f394d6ad5e812,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e81f58b35a9b87545b128f00412906d7, type: 2}
     - target: {fileID: 4657619236119580891, guid: 9751aa2f6d67d1b4fb7f394d6ad5e812,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -2304,6 +2426,11 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8986952471417457231, guid: 9751aa2f6d67d1b4fb7f394d6ad5e812,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1011689992}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9751aa2f6d67d1b4fb7f394d6ad5e812, type: 3}
 --- !u!114 &8262043317570366251 stripped

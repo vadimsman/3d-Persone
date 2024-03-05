@@ -26,7 +26,6 @@ public class PlayerController : MonoBehaviour
 
     public float StandartSpeed;
 
-    // Start is called before the first frame update
     void Start()
     {
         _characterController = GetComponent<CharacterController>();
@@ -34,78 +33,66 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        // Movement
+        Movement();
+        JumpMove();
+    }
+
+    private void JumpMove()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && _characterController.isGrounded && _isJump == false)
+        {
+            _fallVelocity = -JumpForce;
+        }
+    }
+
+    private void Movement()
+    {
         _moveVector = Vector3.zero;
-
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            Speed = ShiftSpeed;
-            animator.SetBool("isFastRun", true);
-        }
-
-        if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            Speed = StandartSpeed;
-            animator.SetBool("isFastRun", false);
-        }
 
         if (Input.GetKey(KeyCode.W))
         {
             _moveVector += transform.forward;
+            animator.SetInteger("Run Direction", 1);
         }
 
         if (Input.GetKey(KeyCode.S))
         {
             _moveVector -= transform.forward;
+            animator.SetInteger("Run Direction", 2);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
             _moveVector -= transform.right;
+            animator.SetInteger("Run Direction", 4);
         }
         if (Input.GetKey(KeyCode.D))
         {
             _moveVector += transform.right;
+            animator.SetInteger("Run Direction", 3);
         }
 
-        if (_moveVector != Vector3.zero)
+        if (_moveVector == Vector3.zero)
         {
-            animator.SetBool("isRun", true);
-        }
-        else
-        {
-            animator.SetBool("isRun", false);
-        }
-
-        // Jump
-        if (Input.GetKeyDown(KeyCode.Space) && _characterController.isGrounded && _isJump == false)
-        {
-            StartCoroutine(Jump());
+            animator.SetInteger("Run Direction", 0);
         }
     }
-    // Update is called once per frame
+
     void FixedUpdate()
     {
         // Movement
         _characterController.Move(_moveVector * Speed * Time.fixedDeltaTime);
+        FallAndJump();
+    }
 
-        //Fall and Jump
+    private void FallAndJump()
+    {
         _fallVelocity += Gravity * Time.fixedDeltaTime;
         _characterController.Move(Vector3.down * _fallVelocity * Time.fixedDeltaTime);
 
         if (_characterController.isGrounded)
         {
             _fallVelocity = 0;
-            animator.SetBool("isGrounded", true);
         }
-    }
-    public IEnumerator Jump()
-    {
-        _isJump = true;
-        animator.SetBool("isGrounded", false);
-        yield return new WaitForSeconds(0.45f);
-        _fallVelocity = -JumpForce;
-        yield return new WaitForSeconds(0.25f);
-        _isJump = false;
     }
 }
