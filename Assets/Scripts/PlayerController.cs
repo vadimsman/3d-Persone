@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
 
     private bool _isJump;
 
+    private bool _isFalse = true;
+
     // Public
     public Animator animator;
 
@@ -26,6 +28,12 @@ public class PlayerController : MonoBehaviour
 
     public float StandartSpeed;
 
+    public int MaxGranade = 3;
+
+    public int CurrentGranade;
+
+    public bool IsDeath = false;
+
     void Start()
     {
         _characterController = GetComponent<CharacterController>();
@@ -33,8 +41,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        Movement();
-        JumpMove();
+        if (_isFalse == true && IsDeath == false)
+        {
+            Movement();
+            JumpMove();
+        }
     }
 
     private void JumpMove()
@@ -93,6 +104,13 @@ public class PlayerController : MonoBehaviour
         if (_characterController.isGrounded)
         {
             _fallVelocity = 0;
+        }
+    }
+    public void AddGranade()
+    {
+        if(CurrentGranade < MaxGranade)
+        {
+            CurrentGranade += 1;
         }
     }
 }

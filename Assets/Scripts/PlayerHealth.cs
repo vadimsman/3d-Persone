@@ -10,12 +10,14 @@ public class PlayerHealth : MonoBehaviour
     public GameObject GameplayUI;
     public GameObject GameOverScreen;
     public Animator Animator;
+    public CharacterController CharacterController;
 
     private float _currentValue;
 
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<ReloadOnEscape>().enabled = false;
         _currentValue = MaxValue;
         UpdateHealthBar();
     }
@@ -50,9 +52,12 @@ public class PlayerHealth : MonoBehaviour
         Animator.SetTrigger("isDeath");
         GameplayUI.SetActive(false);
         GameOverScreen.SetActive(true);
-        GetComponent<PlayerController>().enabled = false;
         GetComponent<FireballCaster>().enabled = false;
         Animator.SetTrigger("isDeath");
         GetComponent<CameraRotation>().enabled = false;
+        CharacterController.height = 0;
+        CharacterController.radius = 0.1f;
+        GetComponent<PlayerController>().IsDeath = true;
+        GetComponent<ReloadOnEscape>().enabled = true;
     }
 }
