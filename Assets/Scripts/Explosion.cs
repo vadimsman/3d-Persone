@@ -7,9 +7,12 @@ public class Explosion : MonoBehaviour
     public float Damage = 50;
     public float MaxSize = 8;
     public float Speed = 4;
+    public float Experience = 75;
+    public PlayerProgress PlayerProgress;
     void Start()
     {
-        transform.localScale = Vector3.zero; 
+        transform.localScale = Vector3.zero;
+        PlayerProgress = FindObjectOfType<PlayerProgress>();
     }
 
     void Update()
@@ -34,6 +37,7 @@ public class Explosion : MonoBehaviour
             EnemyHealth.Value -= Damage;
             if (EnemyHealth.Value <= 0)
             {
+                PlayerProgress.AddExperience(Experience);
                 Destroy(EnemyHealth.gameObject);
             }
         }

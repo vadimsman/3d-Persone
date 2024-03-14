@@ -7,12 +7,15 @@ public class Fireball : MonoBehaviour
     public float Speed;
     public float LifeTime;
     public float Damage = 10;
+    public float Experience = 50;
+    public PlayerProgress PlayerProgress;
 
 
     // Start is called before the first frame update
     void Start()
     {
         Invoke("DestroyFireball", LifeTime);
+        PlayerProgress = FindObjectOfType<PlayerProgress>();
     }
 
     // Update is called once per frame
@@ -35,6 +38,7 @@ public class Fireball : MonoBehaviour
             if (enemyHealth.Value <= 0)
             {
                 Destroy(enemyHealth.gameObject);
+                PlayerProgress.AddExperience(Experience);
             }
         }
 
