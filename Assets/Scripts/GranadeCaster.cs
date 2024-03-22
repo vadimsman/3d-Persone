@@ -5,6 +5,8 @@ using TMPro;
 
 public class GranadeCaster : MonoBehaviour
 {
+    public float damage = 50;
+
     public int MaxGrenade;
     public int CurrentGrenade;
     public Rigidbody GrenadePrefab;
@@ -20,6 +22,7 @@ public class GranadeCaster : MonoBehaviour
             var grenade = Instantiate(GrenadePrefab);
             grenade.transform.position = GrenadeSourceTransform.position;
             grenade.GetComponent<Rigidbody>().AddForce(GrenadeSourceTransform.forward * Force);
+            grenade.GetComponent<Grenade>().damage = damage;
         }
         UpdateTextCurrentGranede();
     }

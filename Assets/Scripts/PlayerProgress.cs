@@ -6,6 +6,8 @@ using TMPro;
 
 public class PlayerProgress : MonoBehaviour
 {
+    public List<PlayerProgressLevel> levels;
+
     public Slider ExperienceBar;
     public TextMeshProUGUI LevelValueTMP;
 
@@ -16,6 +18,7 @@ public class PlayerProgress : MonoBehaviour
     public void Start()
     {
         DrawUI();
+        SetLevel(_levelValue);
     }
 
     public void AddExperience(float value)
@@ -25,11 +28,20 @@ public class PlayerProgress : MonoBehaviour
         {
             _levelValue += 1;
             _experienceCurrentValue = _experienceCurrentValue - _experienceTargetValue;
-            _experienceTargetValue += 10;
+            SetLevel(_levelValue);
         }
         DrawUI();
     }
 
+    private void SetLevel(int value)
+    {
+        _levelValue = value;
+
+        var CurrentLevel = levels[_levelValue - 1];
+        _experienceTargetValue = CurrentLevel.ExperienceForTheNextLevel;
+        GetComponent<FireballCaster>().Damage = CurrentLevel.FireballDamage;
+        GetComponent<GranadeCaster>().damage = CurrentLevel.GrenadeDamage;
+    }
     private void DrawUI()
     {
         ExperienceBar.value = _experienceCurrentValue;

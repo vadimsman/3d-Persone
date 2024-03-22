@@ -1727,6 +1727,7 @@ MonoBehaviour:
     type: 3}
   FireballSourceTransform: {fileID: 1013517963808645733}
   Animator: {fileID: 2509106818131780696}
+  Damage: 10
 --- !u!114 &1013517963567377564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1788,6 +1789,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5352e76fcf8c0ed48b247b536685f0f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levels:
+  - FireballDamage: 10
+    GrenadeDamage: 50
+    ExperienceForTheNextLevel: 100
+  - FireballDamage: 15
+    GrenadeDamage: 60
+    ExperienceForTheNextLevel: 150
+  - FireballDamage: 20
+    GrenadeDamage: 50
+    ExperienceForTheNextLevel: 250
+  - FireballDamage: 20
+    GrenadeDamage: 60
+    ExperienceForTheNextLevel: 400
+  - FireballDamage: 30
+    GrenadeDamage: 60
+    ExperienceForTheNextLevel: 500
+  - FireballDamage: 50
+    GrenadeDamage: 100
+    ExperienceForTheNextLevel: 750
+  - FireballDamage: 50
+    GrenadeDamage: 150
+    ExperienceForTheNextLevel: 1000
+  - FireballDamage: 75
+    GrenadeDamage: 150
+    ExperienceForTheNextLevel: 3000
+  - FireballDamage: 75
+    GrenadeDamage: 200
+    ExperienceForTheNextLevel: 5000
+  - FireballDamage: 100
+    GrenadeDamage: 300
+    ExperienceForTheNextLevel: 10000
   ExperienceBar: {fileID: 5389977488187644297}
   LevelValueTMP: {fileID: 3297913774249973299}
 --- !u!114 &8616143848004564178
@@ -1802,6 +1834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acf49cea484f1b748a818e563ece930d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 50
   MaxGrenade: 3
   CurrentGrenade: 0
   GrenadePrefab: {fileID: 3904368976227560855, guid: 246ceb5f41a2cf84bbeafbffde679287,
