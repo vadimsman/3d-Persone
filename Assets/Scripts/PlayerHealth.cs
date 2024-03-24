@@ -7,10 +7,11 @@ public class PlayerHealth : MonoBehaviour
 {
     public float MaxValue = 100;
     public Slider Healthbar;
-    public GameObject GameplayUI;
-    public GameObject GameOverScreen;
+    public UnityEngine.GameObject GameplayUI;
+    public UnityEngine.GameObject GameOverScreen;
     public Animator Animator;
     public CharacterController CharacterController;
+    public UnityEngine.GameObject Player;
 
     private float _currentValue;
 
@@ -35,6 +36,10 @@ public class PlayerHealth : MonoBehaviour
     public void Update()
     {
         UpdateHealthBar();
+        if(Player.transform.position.y < -20)
+        {
+            PlayerisDead();
+        }
     }
 
     public void AddHealth(float amount)

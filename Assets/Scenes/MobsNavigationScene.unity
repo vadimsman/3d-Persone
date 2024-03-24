@@ -188,6 +188,9 @@ MonoBehaviour:
   Player: {fileID: 8262043317570366251}
   ViewAngle: 90
   Damage: 30
+  _navMeshAgent: {fileID: 0}
+  _isPlayerNoticed: 0
+  _playerHealth: {fileID: 0}
 --- !u!195 &78254029
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -920,6 +923,9 @@ MonoBehaviour:
   Player: {fileID: 8262043317570366251}
   ViewAngle: 90
   Damage: 30
+  _navMeshAgent: {fileID: 0}
+  _isPlayerNoticed: 0
+  _playerHealth: {fileID: 0}
 --- !u!195 &771382462
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1741,6 +1747,9 @@ MonoBehaviour:
   Player: {fileID: 8262043317570366251}
   ViewAngle: 90
   Damage: 30
+  _navMeshAgent: {fileID: 0}
+  _isPlayerNoticed: 0
+  _playerHealth: {fileID: 0}
 --- !u!195 &1586555091
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2951,6 +2960,21 @@ PrefabInstance:
       propertyPath: DeathScene
       value: 
       objectReference: {fileID: 528522934}
+    - target: {fileID: 2837345142654469229, guid: 9751aa2f6d67d1b4fb7f394d6ad5e812,
+        type: 3}
+      propertyPath: Enemy.Array.data[0]
+      value: 
+      objectReference: {fileID: 78254025}
+    - target: {fileID: 2837345142654469229, guid: 9751aa2f6d67d1b4fb7f394d6ad5e812,
+        type: 3}
+      propertyPath: Enemy.Array.data[1]
+      value: 
+      objectReference: {fileID: 771382458}
+    - target: {fileID: 2837345142654469229, guid: 9751aa2f6d67d1b4fb7f394d6ad5e812,
+        type: 3}
+      propertyPath: Enemy.Array.data[2]
+      value: 
+      objectReference: {fileID: 1586555089}
     - target: {fileID: 4657619236119580891, guid: 9751aa2f6d67d1b4fb7f394d6ad5e812,
         type: 3}
       propertyPath: m_AnchorMax.x
