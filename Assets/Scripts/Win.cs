@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Win : MonoBehaviour
 {
-    public List<GameObject> Enemy;
     public UnityEngine.GameObject GameplayUI;
     public UnityEngine.GameObject WinUI;
 
@@ -17,7 +16,7 @@ public class Win : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Enemy == null)
+        if (FindObjectsOfType<EnemyHealth>().Length <= 0)
         {
             GameplayUI.SetActive(false);
             WinUI.SetActive(true);

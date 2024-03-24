@@ -182,15 +182,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PatrolPoint:
   - {fileID: 1245003819}
-  - {fileID: 540585523}
   - {fileID: 1998927940}
+  - {fileID: 1245003819}
   - {fileID: 1437515679}
   Player: {fileID: 8262043317570366251}
   ViewAngle: 90
   Damage: 30
-  _navMeshAgent: {fileID: 0}
-  _isPlayerNoticed: 0
-  _playerHealth: {fileID: 0}
 --- !u!195 &78254029
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -923,9 +920,6 @@ MonoBehaviour:
   Player: {fileID: 8262043317570366251}
   ViewAngle: 90
   Damage: 30
-  _navMeshAgent: {fileID: 0}
-  _isPlayerNoticed: 0
-  _playerHealth: {fileID: 0}
 --- !u!195 &771382462
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1747,9 +1741,6 @@ MonoBehaviour:
   Player: {fileID: 8262043317570366251}
   ViewAngle: 90
   Damage: 30
-  _navMeshAgent: {fileID: 0}
-  _isPlayerNoticed: 0
-  _playerHealth: {fileID: 0}
 --- !u!195 &1586555091
 NavMeshAgent:
   m_ObjectHideFlags: 0

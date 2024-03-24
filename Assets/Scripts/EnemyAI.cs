@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class ScriptableObject : MonoBehaviour
+public class EnemyAI : MonoBehaviour
 {
     // Public
     public List<Transform> PatrolPoint;
