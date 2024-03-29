@@ -1710,7 +1710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraAxisTransform: {fileID: 1013517962596354782}
-  RotationSpeed: 300
+  RotationSpeed: 200
   MaxAngle: 70
   MinAngle: -20
 --- !u!114 &8986952471417457231
